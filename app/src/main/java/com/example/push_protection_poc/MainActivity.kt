@@ -15,6 +15,7 @@ import com.example.push_protection_poc.ui.theme.PushprotectionpocTheme
 
 class MainActivity : ComponentActivity() {
     var netceterasdkapikey="AKIAIOSFODNN7EXAMPLE"
+    var key2="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

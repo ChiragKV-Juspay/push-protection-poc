@@ -14,8 +14,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.push_protection_poc.ui.theme.PushprotectionpocTheme
 
 class MainActivity : ComponentActivity() {
-    var netceterasdkapikey="AKIAIOSFODNN7EXAMPLE"
-    var key2="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+// GitHub Personal Access Token (more reliable)
+    val token = "ghp_1234567890abcdefghijklmnopqrstuvwxyz1234"
+
+    // Or try real AWS format in same line
+    val awsCreds = "AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,7 +26,7 @@ class MainActivity : ComponentActivity() {
             PushprotectionpocTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
                     Greeting(
-                        name = netceterasdkapikey,
+                        name = token,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

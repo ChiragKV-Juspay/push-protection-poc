@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.push_protection_poc.ui.theme.PushprotectionpocTheme
 
 class MainActivity : ComponentActivity() {
+    var netceterasdkapikey="1asc2safKnscal2"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
             PushprotectionpocTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = netceterasdkapikey,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

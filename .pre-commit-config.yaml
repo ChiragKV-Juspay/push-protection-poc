@@ -1,0 +1,25 @@
+# repos:
+#   - repo: local
+#     hooks:
+#       - id: trufflehog
+#         name: TruffleHog
+#         description: Scan for secrets using TruffleHog
+#         entry: bash -c 'trufflehog git file://. --since-commit HEAD --fail --no-update --regex --entropy --config=.trufflehog.yml'
+#         language: system
+#         pass_filenames: false
+#         stages: [pre-commit, pre-push]
+
+
+repos:
+  - repo: local
+    hooks:
+      - id: setup-gitleaks
+        name: Ensure Gitleaks & Pre-commit Installed
+        entry: bash setup-gitleaks.sh
+        language: system
+        pass_filenames: false
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks

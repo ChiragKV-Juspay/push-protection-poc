@@ -1,0 +1,7 @@
+title = "gitleaks config"
+
+[[rules]]
+id = "uuid-secrets"
+description = "UUID-based secrets"
+regex = '''[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
+keywords = ["key", "token", "secret", "api", "netecetera", "netcetra"]

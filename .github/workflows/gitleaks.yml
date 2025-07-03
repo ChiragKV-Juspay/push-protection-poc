@@ -1,28 +1,33 @@
-name: Gitleaks Secret Scanning
+name: Gitleaks Secret Scan
 
 on:
   push:
-    branches: [main] # or your protected branch
+    branches: [main]
   pull_request:
     branches: [main]
 
 permissions:
   contents: read
-  security-events: write # 👈 Required to upload SARIF
+  security-events: write
 
 jobs:
   gitleaks:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@v2
-        with:
-          args: detect --source=. --report-format=sarif --report-path=gitleaks.sarif
+      - name: Install Gitleaks
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64 -o gitleaks
+          chmod +x gitleaks
+          sudo mv gitleaks /usr/local/bin
 
-      - name: Upload SARIF file to GitHub
+      - name: Run Gitleaks and generate SARIF
+        run: |
+          gitleaks detect --source=. --report-format sarif --report-path=gitleaks.sarif
+
+      - name: Upload SARIF to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: gitleaks.sarif

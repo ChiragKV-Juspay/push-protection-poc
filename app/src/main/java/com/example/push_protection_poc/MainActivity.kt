@@ -16,9 +16,8 @@ import com.example.push_protection_poc.ui.theme.PushprotectionpocTheme
 class MainActivity : ComponentActivity() {
 // GitHub Personal Access Token (more reliable)
     val token = "secret_scanning_sample_token_123456789012345678901234567890"
-
     // Or try real AWS format in same line
-    val awsCreds = "AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    val awsCreds = "saxwJalrXUtnFEMI/K7MDENG/bPxRfiCYEXLEEY"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

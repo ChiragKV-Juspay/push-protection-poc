@@ -18,6 +18,7 @@ class MainActivity : ComponentActivity() {
     val token = "secret_scanning_sample_token_123456789012345678901234567890"
     // Or try real AWS format in same line
     val awsCreds = "saxwJalrXUtnFEMI/K7MDENG/bPxRfiCYEXLEEY"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
